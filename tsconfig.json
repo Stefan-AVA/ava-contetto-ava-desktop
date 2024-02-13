@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es6",                          // Compile to ECMAScript 6
+    "module": "commonjs",                     // Use commonjs module resolution
+    "outDir": "./dist",                       // Output compiled JS files to the 'dist' directory
+    "strict": true,                           // Enable all strict type-checking options
+    "esModuleInterop": true,                  // Enables emit interoperability between CommonJS and ES Modules
+    "forceConsistentCasingInFileNames": true, // Disallow inconsistently-cased references to the same file.
+    "sourceMap": true,                         // Generate source map files for debugging
+    "lib": ["esnext", "DOM"], // Specify libraries manually, excluding "dom"
+
+  },
+  "include": ["src/**/*"],                     // Include all files within the 'src' directory
+  "exclude": ["node_modules", "dist"]          // Exclude 'node_modules' directory and the output 'dist' directory
+}
