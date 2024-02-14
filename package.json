@@ -1,6 +1,6 @@
 {
   "name": "avahomeai",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Cottento desktop app",
   "main": "dist/main.js",
   "scripts": {

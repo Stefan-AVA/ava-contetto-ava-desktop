@@ -70,9 +70,9 @@ jobs:
         with:
           node-version: "20"
       - run: npm install
-      - run: npm run make
+      # - run: npm run make
 
-      - name: CodeSige
+      - name: Build and CodeSige
         env:
           MAC_CERTIFICATE: ${{ secrets.MAC_CERTIFICATE }}s
           MAC_CERTIFICATE_PWD: ${{ secrets.MAC_CERTIFICATE_PWD }}
@@ -91,3 +91,9 @@ jobs:
           security find-identity
           
           npm run publish -- --dry-run
+
+      - name: Publish electron app
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+      - run: npm run publish -- --from-dry-run
