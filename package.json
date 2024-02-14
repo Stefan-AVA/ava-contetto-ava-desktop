@@ -12,45 +12,6 @@
     "tsc": "tsc",
     "watch": "tsc -w"
   },
-  "config": {
-    "forge": {
-      "packagerConfig": {
-        "icon": "build/icon",
-        "name": "Contetto",
-        "executableName": "Contetto",
-        "appId": "com.macdouall.contetto"
-      },
-      "makers": [
-        {
-          "name": "@electron-forge/maker-squirrel",
-          "config": {
-            "name": "Contetto",
-            "authors": "Your Name",
-            "description": "Contetto is an application like slack",
-            "exe": "Contetto.exe",
-            "setupIcon": "build/icon.ico",
-            "noMsi": true,
-            "setupExe": "ContettoSetup.exe",
-            "setupMsi": "ContettoSetup.msi"
-          }
-        },
-        {
-          "name": "@electron-forge/maker-zip",
-          "platforms": [
-            "darwin"
-          ]
-        },
-        {
-          "name": "@electron-forge/maker-deb",
-          "config": {}
-        },
-        {
-          "name": "@electron-forge/maker-rpm",
-          "config": {}
-        }
-      ]
-    }
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
