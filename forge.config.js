@@ -5,7 +5,7 @@ module.exports = {
     icon: "build/icon",
     asar: true,
     osxSign: {
-      identity: "Developer ID Application: *",
+      identity: "Developer ID Application",
       hardenedRuntime: true,
       'gatekeeper-assess': false
     },
