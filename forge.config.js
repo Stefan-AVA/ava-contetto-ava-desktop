@@ -1,5 +1,3 @@
-const { version } = require('./package.json')
-
 module.exports = {
   packagerConfig: {
     appId: "com.avahome.ava.desktop",
@@ -39,6 +37,19 @@ module.exports = {
     {
       name: "@electron-forge/maker-rpm",
       config: {},
+    },
+  ],
+  publishers: [
+    {
+      name: "@electron-forge/publisher-github",
+      platforms: ['win32'],
+      config: {
+        repository: {
+          owner: "Real-Estate-Search-AI",
+          name: "ava-desktop-public",
+        },
+        prerelease: true,
+      },
     },
   ],
   plugins: [
