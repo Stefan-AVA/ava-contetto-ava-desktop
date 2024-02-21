@@ -36,6 +36,9 @@ module.exports = {
     {
       name: '@electron-forge/maker-dmg',
       platforms: ["darwin"],
+      config: {
+        background: './assets/icon/task-win.png'
+      }
     },
     {
       name: "@electron-forge/maker-deb",
