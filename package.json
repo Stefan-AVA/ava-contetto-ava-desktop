@@ -9,7 +9,7 @@
     "build": "tsc && electron-forge make",
     "make": "export DEBUG=electron-notarize* && electron-forge make",
     "package": "tsc && electron-forge package",
-    "publish": "tsc && export DEBUG=electron-notarize* && electron-forge publish",
+    "publish": "tsc && electron-forge publish",
     "tsc": "tsc",
     "watch": "tsc -w"
   },
