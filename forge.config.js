@@ -2,7 +2,7 @@ require('dotenv').config()
 
 module.exports = {
   packagerConfig: {
-    appId: "com.avahome.ava.desktop",
+    appId: "com.avahomeai.desktop",
     name: "Contetto",
     icon: "build/icon",
     asar: true,
@@ -35,10 +35,7 @@ module.exports = {
     },
     {
       name: '@electron-forge/maker-dmg',
-      platforms: ["darwin"],
-      config: {
-        background: './assets/icon/task-win.png'
-      }
+      platforms: ["darwin"]
     },
     {
       name: "@electron-forge/maker-deb",
