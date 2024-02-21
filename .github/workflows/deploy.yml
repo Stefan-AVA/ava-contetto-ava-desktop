@@ -70,10 +70,13 @@ jobs:
 
       - name: Build and CodeSige
         env:
-          MAC_CERTIFICATE: ${{ secrets.MAC_CERTIFICATE }}s
+          MAC_CERTIFICATE: ${{ secrets.MAC_CERTIFICATE }}
           MAC_CERTIFICATE_PWD: ${{ secrets.MAC_CERTIFICATE_PWD }}
           MAC_KEYCHAIN_PASSWORD: ${{ secrets.MAC_KEYCHAIN_PASSWORD }}
           MAC_CERTIFICATE_IDENTITY: ${{ secrets.MAC_CERTIFICATE_IDENTITY }}
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_APP_PASSWORD: ${{ secrets.APPLE_APP_PASSWORD }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
         run: |
           echo "$MAC_CERTIFICATE" | base64 --decode > certificate.p12
 
@@ -88,4 +91,5 @@ jobs:
           
           npm run publish -- --dry-run
 
-      - run: npm run publish -- --from-dry-run
+      - name: Publish
+        run: npm run publish -- --from-dry-run

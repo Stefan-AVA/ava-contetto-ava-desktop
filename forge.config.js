@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 module.exports = {
   packagerConfig: {
     appId: "com.avahome.ava.desktop",
@@ -9,11 +11,12 @@ module.exports = {
       hardenedRuntime: true,
       'gatekeeper-assess': false
     },
-    // osxNotarize: {
-    //   tool: "notarytool",
-    //   appleId: process.env.APPLE_ID,
-    //   appleIdPassword: process.env.APPLE_APP_PASSWORD
-    // }
+    osxNotarize: {
+      tool: 'notarytool',
+      appleId: process.env.APPLE_ID,
+      appleIdPassword: process.env.APPLE_APP_PASSWORD,
+      teamId: process.env.APPLE_TEAM_ID
+    }
   },
   rebuildConfig: {},
   makers: [
@@ -28,6 +31,10 @@ module.exports = {
     },
     {
       name: "@electron-forge/maker-zip",
+      platforms: ["darwin"],
+    },
+    {
+      name: '@electron-forge/maker-dmg',
       platforms: ["darwin"],
     },
     {

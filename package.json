@@ -7,7 +7,7 @@
     "dev": "tsc && electron-forge start",
     "start": "electron-forge start",
     "build": "tsc && electron-forge make",
-    "make": "tsc && electron-forge make",
+    "make": "export DEBUG=electron-notarize* && electron-forge make",
     "package": "tsc && electron-forge package",
     "publish": "tsc && electron-forge publish",
     "tsc": "tsc",
@@ -20,7 +20,9 @@
   },
   "license": "ISC",
   "dependencies": {
+    "@electron-forge/maker-dmg": "^7.2.0",
     "@electron-forge/publisher-github": "^7.2.0",
+    "dotenv": "^16.4.5",
     "electron-squirrel-startup": "^1.0.0"
   },
   "devDependencies": {
